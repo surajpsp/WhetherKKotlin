@@ -1,6 +1,8 @@
 package com.silentdev.whetherkmm.core.remote
 
+import com.silentdev.whetherkmm.core.util.BASE_URL
 import io.ktor.client.HttpClient
+import io.ktor.client.engine.darwin.Darwin
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
 import io.ktor.client.plugins.defaultRequest
 import io.ktor.client.plugins.logging.LogLevel

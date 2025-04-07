@@ -27,9 +27,14 @@ kotlin {
             implementation(compose.ui)
             implementation(compose.components.resources)
             implementation(compose.components.uiToolingPreview)
+            implementation(compose.materialIconsExtended)
             implementation(libs.androidx.lifecycle.viewmodel)
             implementation(libs.androidx.lifecycle.runtime.compose)
             implementation(projects.shared)
+            // put your Multiplatform dependencies here
+            implementation(libs.voyager.navigation)
+            implementation(libs.voyager.screenmodel)
+            implementation(libs.voyager.transitions)
         }
     }
 }

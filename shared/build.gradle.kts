@@ -33,10 +33,6 @@ kotlin {
             implementation(libs.ktor.client.okhttp)
         }
         commonMain.dependencies {
-            // put your Multiplatform dependencies here
-            implementation(libs.voyager.navigation)
-            implementation(libs.voyager.screenmodel)
-            implementation(libs.voyager.transitions)
             implementation(libs.koin.core)
             implementation(libs.kotlinx.datetime)
             implementation(libs.kotlinx.serialization)
