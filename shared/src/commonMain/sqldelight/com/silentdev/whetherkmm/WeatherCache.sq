@@ -1,0 +1,40 @@
+
+-- already existing table
+CREATE TABLE WeatherCache (
+    id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    temperature REAL,
+    windSpeed REAL,
+    windDirection REAL,
+    code INTEGER,
+    time TEXT
+);
+
+-- NEW TABLE for forecast
+CREATE TABLE ForecastCache (
+    date TEXT PRIMARY KEY,
+    tempMax REAL,
+    tempMin REAL,
+    code INTEGER
+);
+
+-- Queries
+selectLast:
+SELECT * FROM WeatherCache ORDER BY id DESC LIMIT 1;
+
+clear:
+DELETE FROM WeatherCache;
+
+insertWeather:
+INSERT INTO WeatherCache(temperature, windSpeed, windDirection, code, time)
+VALUES (?, ?, ?, ?, ?);
+
+-- NEW: Forecast queries
+selectAllForecast:
+SELECT * FROM ForecastCache ORDER BY date ASC;
+
+insertForecast:
+INSERT INTO ForecastCache(date, tempMax, tempMin, code)
+VALUES (?, ?, ?, ?);
+
+clearForecast:
+DELETE FROM ForecastCache;

@@ -7,6 +7,15 @@ plugins {
     alias(libs.plugins.kotlinSerialization)
 }
 
+sqldelight {
+    databases {
+        create("WeatherDatabase") {
+            packageName.set("com.silentdev.whetherkmm")
+            sourceSets
+        }
+    }
+}
+
 kotlin {
     androidTarget {
         compilerOptions {
@@ -29,7 +38,6 @@ kotlin {
 
         androidMain.dependencies {
             implementation(libs.sqldelight.android)
-            implementation(libs.koin.android)
             implementation(libs.ktor.client.okhttp)
         }
         commonMain.dependencies {
