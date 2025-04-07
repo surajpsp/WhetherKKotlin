@@ -2,7 +2,7 @@ package com.silentdev.whetherkmm.core.remote
 
 import io.ktor.client.HttpClient
 
-abstract class KtorApi {
+class KtorApi {
     val client: HttpClient by lazy { createHttpClient() }
 }
 
