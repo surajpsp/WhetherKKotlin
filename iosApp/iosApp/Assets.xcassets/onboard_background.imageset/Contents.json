@@ -1,0 +1,23 @@
+{
+  "images": [
+    {
+      "filename": "onboard_background.svg",
+      "idiom": "universal",
+      "scale": "1x"
+    },
+    {
+      "filename": "onboard_background 1.svg",
+      "idiom": "universal",
+      "scale": "2x"
+    },
+    {
+      "filename": "onboard_background 2.svg",
+      "idiom": "universal",
+      "scale": "3x"
+    }
+  ],
+  "info": {
+    "author": "xcode",
+    "version": 1
+  }
+}

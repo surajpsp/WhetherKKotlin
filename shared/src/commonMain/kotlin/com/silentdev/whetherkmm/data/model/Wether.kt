@@ -5,7 +5,10 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class WeatherResponse(
-    @SerialName("current_weather")
+    val latitude: Double,
+    val longitude: Double,
+    val timezone: String,
+    @SerialName("current")
     val currentWeather: CurrentWeather,
     @SerialName("daily")
     val dailyForecast: DailyForecast
@@ -13,17 +16,19 @@ data class WeatherResponse(
 
 @Serializable
 data class CurrentWeather(
-    @SerialName("temperature") val temperature: Double,
-    @SerialName("windspeed") val windSpeed: Double,
-    @SerialName("winddirection") val windDirection: Double,
+    @SerialName("temperature_2m") val temperature: Double,
     @SerialName("weathercode") val weatherCode: Int,
-    @SerialName("time") val time: String
+    @SerialName("uv_index") val uvIndex: Double,
+    @SerialName("relative_humidity_2m") val humidity: Double,
+    @SerialName("precipitation") val precipitation: Double
 )
 
 @Serializable
 data class DailyForecast(
     val time: List<String>,
-    @SerialName("temperature_2m_max") val tempMax: List<Double>,
-    @SerialName("temperature_2m_min") val tempMin: List<Double>,
-    @SerialName("weathercode") val weatherCode: List<Int>
+    val weathercode: List<Int>,
+    @SerialName("temperature_2m_max") val temperatureMax: List<Double>,
+    @SerialName("temperature_2m_min") val temperatureMin: List<Double>,
+    @SerialName("uv_index_max") val uvIndexMax: List<Double>,
+    @SerialName("precipitation_sum") val precipitationSum: List<Double>
 )

@@ -5,6 +5,7 @@ plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.sqlDelightPlugin)
     alias(libs.plugins.kotlinSerialization)
+    id("com.rickclephas.kmp.nativecoroutines") version "1.0.0-ALPHA-41"
 }
 
 sqldelight {
@@ -45,6 +46,8 @@ kotlin {
             implementation(libs.kotlinx.datetime)
             implementation(libs.kotlinx.serialization)
             implementation(libs.bundles.ktor)
+            implementation("com.rickclephas.kmp:kmp-nativecoroutines-core:1.0.0-ALPHA-16")
+
         }
 
         iosMain.dependencies {

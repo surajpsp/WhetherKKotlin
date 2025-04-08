@@ -6,16 +6,18 @@ data class WeatherInfo(
 )
 
 data class CurrentWeatherInfo(
-    val temperature: Double,
-    val windSpeed: Double,
-    val windDirection: Double,
-    val code: Int,
-    val time: String
+    val temperatureCelsius: String,
+    val temperatureFahrenheit: String,
+    val location: String,
+    val weatherInfo: String,
+    val uv: String,
+    val humidity: String,
+    val precipitation: String
 )
 
 data class ForecastDay(
     val date: String,
-    val tempMax: Double,
-    val tempMin: Double,
-    val code: Int
+    val temperatureCelsius: String,
+    val temperatureFahrenheit: String,
+    val weatherInfo: String
 )

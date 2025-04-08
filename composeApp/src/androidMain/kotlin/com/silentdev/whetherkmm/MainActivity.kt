@@ -6,7 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import cafe.adriel.voyager.navigator.Navigator
-import com.silentdev.whetherkmm.persentation.OnboardingScreen
+import com.silentdev.whetherkmm.persentation.onboard_page.OnboardingScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,9 +16,6 @@ class MainActivity : ComponentActivity() {
             Navigator(screen = OnboardingScreen())
         }
 
-//        setContent {
-//            App()
-//        }
     }
 }
 
