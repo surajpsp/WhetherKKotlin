@@ -1,10 +1,10 @@
 package com.silentdev.whetherkmm.persentation.viewmodel
 
-import com.rickclephas.kmp.nativecoroutines.NativeCoroutinesState
 import com.silentdev.whetherkmm.domain.repository.WeatherRepositoryImpl
 import com.silentdev.whetherkmm.persentation.state.WeatherUiState
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -21,8 +21,7 @@ class WeatherViewModel(
 
     private val _uiState = MutableStateFlow<WeatherUiState>(WeatherUiState.Idle)
 
-    @NativeCoroutinesState
-    val weatherState: StateFlow<WeatherUiState> get() = _uiState
+    val uiState: StateFlow<WeatherUiState> get() = _uiState
 
 
     fun loadWeather(lat: Double, lon: Double) {
@@ -35,6 +34,17 @@ class WeatherViewModel(
             }
         }
     }
+
+    /**
+     * Start collecting uiState and invoke [onChange] on each emission.
+     * Returns the Job so Swift can cancel it.
+     */
+    fun observeUiState(onChange: (WeatherUiState) -> Unit): Job {
+        return viewModelScope.launch {
+            uiState.collect { onChange(it) }
+        }
+    }
+
 
     fun clearTask() {
         viewModelScope.cancel()

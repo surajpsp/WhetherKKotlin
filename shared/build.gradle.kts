@@ -34,6 +34,10 @@ kotlin {
             isStatic = true
         }
     }
+
+    sourceSets.all {
+        languageSettings.optIn("kotlin.experimental.ExperimentalObjCName")
+    }
     
     sourceSets {
 
@@ -46,7 +50,6 @@ kotlin {
             implementation(libs.kotlinx.datetime)
             implementation(libs.kotlinx.serialization)
             implementation(libs.bundles.ktor)
-            implementation("com.rickclephas.kmp:kmp-nativecoroutines-core:1.0.0-ALPHA-16")
 
         }
 

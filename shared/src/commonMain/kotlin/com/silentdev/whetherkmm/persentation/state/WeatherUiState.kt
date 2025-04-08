@@ -16,4 +16,5 @@ sealed class WeatherUiState {
 
     @Serializable
     data class Error(val message: String) : WeatherUiState()
+
 }

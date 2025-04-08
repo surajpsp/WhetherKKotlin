@@ -3,7 +3,7 @@ package com.silentdev.whetherkmm.di
 import app.cash.sqldelight.db.SqlDriver
 import app.cash.sqldelight.driver.native.NativeSqliteDriver
 import com.silentdev.whetherkmm.WeatherDatabase
-import com.silentdev.whetherkmm.viewmodel.WeatherViewModel
+import com.silentdev.whetherkmm.persentation.viewmodel.WeatherViewModel
 import org.koin.dsl.module
 import platform.UIKit.UIApplication
 import platform.UIKit.UIViewController
