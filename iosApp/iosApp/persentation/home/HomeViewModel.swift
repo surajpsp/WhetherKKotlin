@@ -9,7 +9,6 @@
 import Combine
 import Shared
 import KMPNativeCoroutinesCombine
-import KMPNativeCoroutinesAsync
 
 @MainActor
 final class WeatherViewModelWrapper: ObservableObject {
@@ -27,7 +26,7 @@ final class WeatherViewModelWrapper: ObservableObject {
     private func observeUiState() {
         // Observe state changes
     
-        createPublisher(for: viewModel.uiState)
+        createPublisher(for: viewModel.weatherState)
                     .receive(on: DispatchQueue.main)
                     .sink { [weak self] state in
                         self?.uiState = state

@@ -22,7 +22,8 @@ class WeatherViewModel(
     private val _uiState = MutableStateFlow<WeatherUiState>(WeatherUiState.Idle)
 
     @NativeCoroutinesState
-    val uiState: StateFlow<WeatherUiState> get() = _uiState
+    val weatherState: StateFlow<WeatherUiState> get() = _uiState
+
 
     fun loadWeather(lat: Double, lon: Double) {
         viewModelScope.launch {
