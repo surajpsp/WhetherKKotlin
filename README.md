@@ -7,11 +7,6 @@ A Kotlin Multiplatform Mobile (KMM) weather application targeting **Android** an
 - Offline caching with SQLDelight
 - Dependency injection via Koin
 
-- ![Simulator Screenshot - iPhone 16 - 2025-04-08 at 17 34 39](https://github.com/user-attachments/assets/e401ce6a-d45f-4428-baba-29ada76cfca7)
-
-- ![Simulator Screenshot - iPhone 16 - 2025-04-08 at 17 34 39](https://github.com/user-attachments/assets/b39e7fed-8669-4791-acd6-32a33561e07a)
-
-
   
 This is a Kotlin Multiplatform project targeting Android, iOS.
 
