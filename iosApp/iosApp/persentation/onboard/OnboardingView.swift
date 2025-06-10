@@ -10,30 +10,41 @@ struct OnboardingView: View {
                 .scaledToFill()
                 .ignoresSafeArea()
             
-            VStack(alignment: .center ,spacing: 20) {
+            VStack(alignment: .leading ,spacing: 0) {
                 Spacer()
                 Text("Never get caught in the rain again")
-                    .font(.title)
-                    .multilineTextAlignment(.center)
+                    .font(.largeTitle)
+                    .bold()
+                    .padding(.horizontal)
+                    .multilineTextAlignment(.leading)
+                    .opacity(0.7)
                 Text("Stay ahead of the weather with our accurate forecasts")
-                    .font(.subheadline)
-                    .foregroundColor(.gray)
-                    .multilineTextAlignment(.center)
-
-                Spacer()
+                    .font(.headline)
+                    .padding(.horizontal)
+                    .multilineTextAlignment(.leading)
+                    .opacity(0.7)
+                
+                Spacer().frame(height: 74)
+                
                 Button(action: {
                     // Navigate to HomeView
                     onContinue()
                 }) {
                     Text("Get started")
-                        .frame(maxWidth: .infinity)
+                        .font(.body)
+                        .bold()
                         .padding()
-                        .background(Color.blue)
+                        .frame(maxWidth: .infinity)
                         .foregroundColor(.white)
-                        .cornerRadius(12)
-                }.padding(.horizontal)
+                        
+                }
+                .padding(.horizontal)
+                    .background(Color.blue)
+                    .cornerRadius(16)
+                
             }.padding(.vertical,68)
-                .padding(.horizontal, 16)
+            .padding(.horizontal, 16)
+                .frame(alignment: .bottom)
         }
         
     }

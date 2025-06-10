@@ -24,7 +24,6 @@ final class WeatherViewModelWrapper: ObservableObject {
                     self?.uiState = state
                 }
             }
-            loadWeather(lat: 28.6448 , lon: 77.2167)
         }
 
 
@@ -38,4 +37,6 @@ final class WeatherViewModelWrapper: ObservableObject {
             vm.loadWeather(lat: lat, lon: lon)
         }
 }
+
+
 
